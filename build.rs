@@ -1,7 +1,7 @@
 extern crate protobuf_codegen_pure;
 extern crate reqwest;
 
-use protobuf_codegen_pure::Codegen;
+use protobuf_codegen_pure::{Codegen, Customize};
 use reqwest::blocking::get;
 use std::env;
 use std::fs;
@@ -38,6 +38,11 @@ fn main() {
         .out_dir(&output_dir)
         .inputs(&[&schema_proto_path, &hrpc_proto_path])
         .include(&current_dir)
+        .customize(Customize {
+            carllerche_bytes_for_bytes: Some(true),
+            carllerche_bytes_for_string: Some(true),
+            ..Default::default()
+        })
         .run()
         .expect("protoc");
 }

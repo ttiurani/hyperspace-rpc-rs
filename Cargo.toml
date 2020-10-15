@@ -4,8 +4,9 @@ version = "0.1.0"
 authors = ["Timo Tiuraniemi <timo.tiuraniemi@iki.fi>"]
 
 [dependencies]
-protobuf = "=2.18.0"
+protobuf = {version = "2.18.0", features = ["with-bytes"] }
+bytes = "0.5.6"
 
 [build-dependencies]
 reqwest = { version = "0.10", features = ["blocking"] }
-protobuf-codegen-pure = "=2.18.0"
+protobuf-codegen-pure = "2.18.0"
