@@ -2,6 +2,7 @@
 name = "hyperspace-rpc-rs"
 version = "0.1.0"
 authors = ["Timo Tiuraniemi <timo.tiuraniemi@iki.fi>"]
+edition = "2018"
 
 [dependencies]
 protobuf = {version = "=2.18.0", features = ["with-bytes"] }
